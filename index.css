@@ -42,3 +42,43 @@ h2 {
   color: #999;
   font-size: 1.25rem;
 }
+
+.slideshow-slide {
+  width: 100%;
+}
+#slideshow-slides {
+  margin-top: 1rem;
+}
+#slideshow-select {
+  align-self: stretch;
+  font-size: 1rem;
+  margin: 0 .5rem;
+}
+#slideshow-controls {
+  display: flex;
+}
+#slideshow-controls button {
+  align-self: stretch;
+  font-weight: normal;
+  font-size: 13px;
+  padding: 5px 15px;
+  background-image: linear-gradient(-180deg, #0088FF 0%, #007CE8 100%);
+  border: 1px solid #006BC8;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 0 0 #A7CFE9;
+  transition: box-shadow 100ms ease-in-out;
+}
+
+#slideshow-controls button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #A7CFE9;
+}
+
+#slideshow-controls button:active {
+  background-image: none;
+  background-color: #007CE8;
+  box-shadow: 0 0 0 0 #A7CFE9;
+  outline: none;
+}
