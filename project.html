@@ -3,6 +3,58 @@
   <head>
     <title>Coding without Borders: Making Contributions to Open Source Medical Software</title>
     <link rel="stylesheet" href="index.css">
+
+    <style>
+      img.slideshow-slide {
+        display: none;
+      }
+    </style>
+
+    <script>
+      currentSlide = 0;
+
+      function getSlides() {
+        return document.getElementsByClassName("slideshow-slide");
+      }
+
+      function getSelect() {
+         return document.getElementById("slideshow-select");
+      }
+
+      function updateView() {
+          var slides = getSlides();
+          for (var i = 0; i < slides.length; i++) {
+              slides[i].style.display = i == currentSlide ? "block" : "none";
+          }
+          getSelect().selectedIndex = currentSlide;
+      }
+
+      function jump(i) {
+        var length = getSlides().length;
+        currentSlide = (currentSlide + i) % length;
+        if (currentSlide < 0) {
+          currentSlide += length;
+        }
+        updateView();
+      }
+
+      function jumpTo(i) {
+        currentSlide = i;
+        updateView();
+      }
+
+      window.onload = function() {
+        var length = getSlides().length;
+        var select = getSelect();
+        for (var i = 0; i < length; i++) {
+          var option = document.createElement("option");
+          option.text = i;
+          select.add(option);
+        }
+        updateView();
+      };
+    </script>
+
   </head>
   <body>
     <div class="header">
@@ -18,7 +70,55 @@
         on the project, our contributions to OpenMRS, LibreHealth and Cornerstone, and the challenges that we encountered along
         the way, along with some background information on medical open source software.
       </p>
-      Page content here
+      <div id="slideshow">
+        <div id="slideshow-controls">
+          <button onclick="jump(-1)">&#10094;</button>
+          <select id="slideshow-select" onchange="jumpTo(getSelect().selectedIndex)"></select>
+          <button onclick="jump(+1)">&#10095;</button>
+        </div>
+        <div id="slideshow-slides">
+          <img class="slideshow-slide" src="slides/slide-00.png">
+          <img class="slideshow-slide" src="slides/slide-01.png">
+          <img class="slideshow-slide" src="slides/slide-02.png">
+          <img class="slideshow-slide" src="slides/slide-03.png">
+          <img class="slideshow-slide" src="slides/slide-04.png">
+          <img class="slideshow-slide" src="slides/slide-05.png">
+          <img class="slideshow-slide" src="slides/slide-06.png">
+          <img class="slideshow-slide" src="slides/slide-07.png">
+          <img class="slideshow-slide" src="slides/slide-08.png">
+          <img class="slideshow-slide" src="slides/slide-09.png">
+          <img class="slideshow-slide" src="slides/slide-10.png">
+          <img class="slideshow-slide" src="slides/slide-11.png">
+          <img class="slideshow-slide" src="slides/slide-12.png">
+          <img class="slideshow-slide" src="slides/slide-13.png">
+          <img class="slideshow-slide" src="slides/slide-14.png">
+          <img class="slideshow-slide" src="slides/slide-15.png">
+          <img class="slideshow-slide" src="slides/slide-16.png">
+          <img class="slideshow-slide" src="slides/slide-17.png">
+          <img class="slideshow-slide" src="slides/slide-18.png">
+          <img class="slideshow-slide" src="slides/slide-19.png">
+          <img class="slideshow-slide" src="slides/slide-20.png">
+          <img class="slideshow-slide" src="slides/slide-21.png">
+          <img class="slideshow-slide" src="slides/slide-22.png">
+          <img class="slideshow-slide" src="slides/slide-23.png">
+          <img class="slideshow-slide" src="slides/slide-24.png">
+          <img class="slideshow-slide" src="slides/slide-25.png">
+          <img class="slideshow-slide" src="slides/slide-26.png">
+          <img class="slideshow-slide" src="slides/slide-27.png">
+          <img class="slideshow-slide" src="slides/slide-28.png">
+          <img class="slideshow-slide" src="slides/slide-29.png">
+          <img class="slideshow-slide" src="slides/slide-30.png">
+          <img class="slideshow-slide" src="slides/slide-31.png">
+          <img class="slideshow-slide" src="slides/slide-32.png">
+          <img class="slideshow-slide" src="slides/slide-33.png">
+          <img class="slideshow-slide" src="slides/slide-34.png">
+          <img class="slideshow-slide" src="slides/slide-35.png">
+          <img class="slideshow-slide" src="slides/slide-36.png">
+          <img class="slideshow-slide" src="slides/slide-37.png">
+          <img class="slideshow-slide" src="slides/slide-38.png">
+          <img class="slideshow-slide" src="slides/slide-39.png">
+        </div>
+      </div>
     </div>
   </body>
 </html>
