@@ -1,0 +1,44 @@
+html {
+  font-family: Helvetica, sans-serif;
+}
+
+.header, .page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #F0F8FF;
+  display: flex;
+}
+.header a {
+  color: #0D64F1;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+.header a:hover {
+  text-decoration: underline;
+}
+.header-title {
+  font-weight: bold;
+  align-self: center;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+p {
+  line-height: 1.6;
+}
+
+h1 {
+  color: #0D64F1;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #0D64F1;
+  padding: 10px 0;
+}
+h2 {
+  color: #999;
+  font-size: 1.25rem;
+}
